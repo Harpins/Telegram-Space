@@ -29,7 +29,7 @@ def find_images(folder_path:str) -> list:
     return image_paths
     
 
-def main(folder_name) -> list:
+def main(folder_name='default') -> list:
     
     folder_path = get_directory_path(folder_name)
     if not find_images(folder_path=folder_path):
@@ -37,4 +37,4 @@ def main(folder_name) -> list:
     return find_images(folder_path=folder_path)
 
 if __name__ == "__main__":
-    main(folder_name='spacex_photos')
+    main()
