@@ -27,20 +27,17 @@
 Часть настроек проекта берётся из переменных окружения. Чтобы их определить, создайте файл `env.env` рядом со скриптами и запишите туда данные в таком формате: `ПЕРЕМЕННАЯ=значение`.
 
 Доступны 4 переменные:
-- Используемые в основных скриптах
+- Используемые в основных скриптах:
   
   `BOT_TOKEN` - [Токен Telegram бота](https://core.telegram.org/bots/tutorial#obtain-your-bot-token)
   
   `TG_GROUP_ID` - [ID группы Telegram](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)
 
-- Используемая в `fetch_nasa_apod_photos.py`
+`NASA_TOKEN` - [Токен NASA API](https://api.nasa.gov/) - используемая в `fetch_nasa_apod_photos.py`
+ 
+`TIME_INTERVAL_H` - используемая для задания периодичности публикации (в ч) в `photobot.py`
   
-  `NASA_TOKEN` - [Токен NASA API](https://api.nasa.gov/)
-
-- Используемая для задания периодичности публикации (в ч) в `photobot.py`
   
-  `TIME_INTERVAL_H` 
-
 
 ### Как установить
 
@@ -61,6 +58,7 @@ pip install -r requirements.txt
 ```sh
 python photobot.py yourfolder 2
 ```
+Бот будет автоматически публиковать фото с периодичностью (в ч), указанной в переменной окружения `TIME_INTERVAL_H` 
 
 - `publish_random_photo`
   
