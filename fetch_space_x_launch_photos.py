@@ -23,8 +23,8 @@ def main(launch_id: str = None, how_much: int = 1) -> list:
         response.raise_for_status()
         response_data = response.json()['links']['flickr']['original']
         if not response_data:
-            return random_photos(how_much) 
-        return response_data       
+            return random_photos(how_much)
+        return response_data
     else:
         params = {'id': launch_id}
         response = requests.get(

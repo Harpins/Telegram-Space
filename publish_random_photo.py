@@ -23,7 +23,8 @@ def main():
                         default=random_source, help='Источник фото')
     parser.add_argument('-n', '--number_of_photos',
                         help='Количество изображений', type=int, default=1)
-    parser.add_argument('-l', '--launch_id', help='ID запуска, только для SpaceX', type=int)
+    parser.add_argument('-l', '--launch_id',
+                        help='ID запуска, только для SpaceX', type=int)
     args = parser.parse_args()
     number_of_photos = args.number_of_photos
 
@@ -32,7 +33,7 @@ def main():
     links_list = []
 
     if args.source == 'spacex':
-        
+
         links_list = fetch_space_x_launch_photos.main(
             launch_id=args.launch_id, how_much=number_of_photos)
     elif args.source == 'epic':
