@@ -33,9 +33,9 @@
   
   `TG_GROUP_ID` - [ID группы Telegram](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)
 
-`NASA_TOKEN` - [Токен NASA API](https://api.nasa.gov/) - используемая в `fetch_nasa_apod_photos.py`
+`NASA_TOKEN` - [Токен NASA API](https://api.nasa.gov/). Используется в `fetch_nasa_apod_photos.py`
  
-`TIME_INTERVAL_H` - используемая для задания периодичности публикации (в ч) в `photobot.py`
+`TIME_INTERVAL_H`. Используется для задания периодичности публикации (в ч) в `photobot.py`
   
   
 
