@@ -35,7 +35,7 @@
 
 `NASA_TOKEN` - [Токен NASA API](https://api.nasa.gov/). Используется в `fetch_nasa_apod_photos.py`
  
-`TIME_INTERVAL_H`. Используется для задания периодичности публикации (в ч) в `photobot.py`
+`TIME_INTERVAL_H` - Периодичность публикации зображений (в ч). Используется в `photobot.py`
   
   
 
