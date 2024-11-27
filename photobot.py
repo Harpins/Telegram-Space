@@ -29,8 +29,7 @@ def main():
     photo_paths = get_photos.main(folder_name=folder_name)
     random.shuffle(photo_paths)
     if len(photo_paths) < number_of_photos:
-        raise Exception(f'В папке {folder_name} менее {
-                        number_of_photos} изображений')
+        raise Exception(f'В папке {folder_name} менее {number_of_photos} изображений')
     elif len(photo_paths) > number_of_photos:
         photo_paths = photo_paths[:number_of_photos]
     while photo_paths:
