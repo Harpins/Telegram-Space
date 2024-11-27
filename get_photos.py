@@ -7,7 +7,7 @@ def get_directory_path(folder_name: str) -> str:
     current_directory = os.getcwd()
     directory_path = os.path.join(current_directory, folder_name)
     if not os.path.isdir(directory_path):
-        raise Exception(
+        raise ValueError(
             f'Папка {folder_name} не обнаружена в текущей директории')
     return directory_path
 
@@ -28,17 +28,19 @@ def find_images(folder_path: str) -> list:
         for file in files:
             if file.endswith(image_extensions):
                 image_path = os.path.join(root, file)
-                compress_image(image_path=image_path)
                 image_paths.append(image_path)
     return image_paths
 
 
-def main(folder_name='default') -> list:
-
+def get_photos(folder_name='default') -> list:
     folder_path = get_directory_path(folder_name)
     if not find_images(folder_path=folder_path):
-        raise Exception('Папка пуста')
+        raise ValueError('Папка пуста')
     return find_images(folder_path=folder_path)
+
+
+def main():
+    return
 
 
 if __name__ == "__main__":

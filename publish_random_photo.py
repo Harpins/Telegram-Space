@@ -1,19 +1,18 @@
 import os
 import random
+from time import sleep
 import argparse
 from dotenv import load_dotenv
 import telegram
 import fetch_nasa_apod_photos
 import fetch_space_x_launch_photos
 import fetch_nasa_epic_photos
-
-
-load_dotenv('env.env')
-BOT_TOKEN = os.getenv('bot_token')
-GROUP_ID = os.getenv('tg_group_id')
-
+from save_photos import save_photos
 
 def main():
+    load_dotenv('env.env')
+    bot_token = os.getenv('BOT_TOKEN')
+    group_id = os.getenv('TG_GROUP_ID')
     sources = ['spacex', 'epic', 'apod']
     random_source = random.choice(sources)
     parser = argparse.ArgumentParser(
@@ -28,21 +27,26 @@ def main():
     args = parser.parse_args()
     number_of_photos = args.number_of_photos
 
-    bot = telegram.Bot(BOT_TOKEN)
+    bot = telegram.Bot(bot_token)
 
-    links_list = []
+    links_listed = []
 
     if args.source == 'spacex':
-
-        links_list = fetch_space_x_launch_photos.main(
+        links_listed = fetch_space_x_launch_photos.get_links_list(
             launch_id=args.launch_id, how_much=number_of_photos)
+        save_photos(links_listed, 'spacex')
     elif args.source == 'epic':
-        links_list = fetch_nasa_epic_photos.main(how_much=number_of_photos)
+        links_listed = fetch_nasa_epic_photos.get_links_list(
+            how_much=number_of_photos)
+        save_photos(links_listed, 'epic')
     elif args.source == 'apod':
-        links_list = fetch_nasa_apod_photos.main(how_much=number_of_photos)
+        links_listed = fetch_nasa_apod_photos.get_links_list(
+            how_much=number_of_photos)
+        save_photos(links_listed, 'apod')
 
-    for link in links_list:
-        bot.send_photo(chat_id=GROUP_ID, photo=link)
+    for link in links_listed:
+        bot.send_photo(chat_id=group_id, photo=link)
+        sleep(1)
 
 
 if __name__ == '__main__':
