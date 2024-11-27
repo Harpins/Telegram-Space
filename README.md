@@ -96,7 +96,7 @@ python publish_random_photo.py -s spacex -n 3
  1. `get_directory_path(folder_name)` - проверяет наличие папки с названием `folder_name` в одной директории со скриптами и возвращает путь к ней.
  2. `compress_image(image_path, max_size_mb)` - сжимает сохраненное изображение, находящееся по ссылке `image_path`, если его размер в Мб превышает `max_size_mb` (default = 15)
  3. `find_images(folder_path)` - возвращает список путей к файлам форматов `.jpg, .jpeg, .png, .gif`, присутствующих в папке `folder_path`.
- 4. `get_photos(folder_name)` - проверяет наличие папки `folder_name` с помощью `get_directory_path()`, после чего запускает `find_images()`. В случае если `find_images()` возвращает пустой список (т. е. в папке нет изображений), сообщает об этом, вызвав ошибку.
+ 4. `get_photos(folder_name)` - проверяет наличие папки `folder_name` с помощью `get_directory_path()`, после чего передает путь к `folder_name` функции `find_images()`. В случае если `find_images()` возвращает пустой список (т. е. в папке нет изображений), сообщает об этом, вызвав ошибку.
 
 
 #### `save_photos`
