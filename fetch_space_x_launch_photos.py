@@ -39,7 +39,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-n', '--number_of_links',
                         help='Количество ссылок на изображения', type=int, default=1)
-    parser.add_argument('-l', '--launch_id', help='ID запуска', type=str, default='')
+    parser.add_argument('-l', '--launch_id', help='ID запуска', type=str)
     args = parser.parse_args()
     number_of_links = args.number_of_links
     launch_id = args.launch_id
