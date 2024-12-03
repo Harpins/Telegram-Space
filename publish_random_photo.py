@@ -11,9 +11,9 @@ import save_photos
 
 def main():
     load_dotenv('env.env')
-    bot_token = os.getenv('BOT_TOKEN')
-    group_id = os.getenv('TG_GROUP_ID')
-    nasa_token = os.getenv('NASA_TOKEN')
+    bot_token = os.environ['TG_BOT_TOKEN']
+    group_id = os.environ['TG_GROUP_ID']
+    nasa_token = os.getenv('NASA_TOKEN', default = 'DEMO_KEY')
     sources = ['spacex', 'epic', 'apod']
     random_source = random.choice(sources)
     parser = argparse.ArgumentParser(
