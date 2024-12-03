@@ -9,9 +9,9 @@ from get_photos import get_photos, compress_image
 
 def main():
     load_dotenv('env.env')
-    bot_token = os.getenv('BOT_TOKEN')
-    group_id = os.getenv('TG_GROUP_ID')
-    time_interval_h = int(os.getenv('TIME_INTERVAL_H'))
+    bot_token = os.environ['TG_BOT_TOKEN']
+    group_id = os.environ['TG_GROUP_ID']
+    time_interval_h = int(os.getenv('TIME_INTERVAL_H', default = '4'))
     parser = argparse.ArgumentParser(
         description='Введите название директории и сколько изображений публиковать'
     )
