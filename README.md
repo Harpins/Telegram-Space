@@ -33,9 +33,9 @@
 Доступны 4 переменные:
 - Используемые в основных скриптах:
   
-  `BOT_TOKEN` - [Токен Telegram бота](https://core.telegram.org/bots/tutorial#obtain-your-bot-token)
+  `TG_BOT_TOKEN` (ОБЯЗАТЕЛЬНАЯ) - [Токен Telegram бота](https://core.telegram.org/bots/tutorial#obtain-your-bot-token) 
   
-  `TG_GROUP_ID` - [ID группы Telegram](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)
+  `TG_GROUP_ID` (ОБЯЗАТЕЛЬНАЯ) - [ID группы Telegram](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id) 
 
   `NASA_TOKEN` - [Токен NASA API](https://api.nasa.gov/). Используется в `fetch_nasa_apod_photos.py` и `fetch_nasa_epic_photos.py`
  
@@ -110,8 +110,7 @@ python publish_random_photo.py -s spacex -n 3
 
 #### `fetch_space_x_launch_photos.py`, `fetch_nasa_apod_photos.py`, `fetch_nasa_epic_photos.py`
 
-Вспомогательные скрипты для `publish_random_photo`. Создают запрос к соответствующим API. После запуска сохранят изображения в папки с соответствующими названиями ('spacex', 'epic', 
- и 'apod').
+Вспомогательные скрипты для `publish_random_photo`. Создают запрос к соответствующим API. После запуска сохранят изображения в папки с соответствующими названиями ('spacex', 'epic' и 'apod').
 
 Каждый из скриптов можно запустить консольной командой, включающей следующие параметры:
 
