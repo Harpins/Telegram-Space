@@ -41,7 +41,7 @@ def main():
     parser.add_argument('-f', '--folder_name', required=True,
                         help='Название директории с изображениями', type=str)
     parser.add_argument('-n', '--number_of_photos',
-                        help='Количество изображений', type=int, default=None)
+                        help='Количество изображений', type=int)
     args = parser.parse_args()
 
     folder_name = args.folder_name
