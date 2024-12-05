@@ -25,7 +25,8 @@ def save_photos(links_listed: list = None, folder: str = 'images') -> None:
 
 
 def generate_image_name(links_listed: list, link: str) -> str:
-    return str(links_listed.index(link)).zfill(int(math.ceil(math.log10(len(links_listed)))))
+    return str(links_listed.index(link)).zfill(
+        int(math.ceil(math.log10(len(links_listed)))))
 
 
 def save_image(image_path: str, image_format: str, link: str) -> None:
@@ -34,3 +35,11 @@ def save_image(image_path: str, image_format: str, link: str) -> None:
         response.raise_for_status()
         image.write(response.content)
     return
+
+
+def main():
+    return
+
+
+if __name__ == '__main__':
+    main()

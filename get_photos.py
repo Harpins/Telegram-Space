@@ -37,3 +37,11 @@ def get_photos(folder_name='default') -> list:
     if not find_images(folder_path=folder_path):
         raise ValueError('Папка пуста')
     return find_images(folder_path=folder_path)
+
+
+def main():
+    return
+
+
+if __name__ == "__main__":
+    main()
