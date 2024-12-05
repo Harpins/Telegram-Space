@@ -34,11 +34,3 @@ def save_image(image_path: str, image_format: str, link: str) -> None:
         response.raise_for_status()
         image.write(response.content)
     return
-
-
-def main():
-    return
-
-
-if __name__ == '__main__':
-    main()
