@@ -39,7 +39,7 @@
 
   `NASA_TOKEN` - [Токен NASA API](https://api.nasa.gov/). Используется в `fetch_nasa_apod_photos.py` и `fetch_nasa_epic_photos.py`
  
-  `TIME_INTERVAL_H` - Периодичность публикации bзображений (в ч). Используется в `photobot.py`
+  `TIME_INTERVAL_H` - Периодичность публикации изображений (в ч). Используется в `photobot.py`
   
   
 
@@ -48,7 +48,7 @@
 Скачайте репозиторий целиком.
 
 Python3 должен быть уже установлен. 
-Затем используйте `pip` (или `pip3`, есть есть конфликт с Python2) для установки зависимостей:
+Затем используйте `pip` (или `pip3`, если есть конфликт с Python2) для установки зависимостей:
 ```
 pip install -r requirements.txt
 ```
